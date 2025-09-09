@@ -24,6 +24,10 @@ public class Programa {
 		System.out.println(aluno.getAprovadoString());
 		System.out.println(aluno.getAprovado() ? "Aprovado" : "Reprovado");
 		
+		System.out.println("***************************************");
+		
+		System.out.println(aluno);
+		
 		
 	}
 

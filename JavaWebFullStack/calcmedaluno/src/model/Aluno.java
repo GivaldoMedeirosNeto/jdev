@@ -148,5 +148,17 @@ public class Aluno {
 		}
 		
 	}
+
+	
+	/* ToString */
+	@Override
+	public String toString() {
+		return "Aluno [nome=" + getNome() + ", dtNasc=" + getDtNasc() + ", rg=" + getRg()
+		+ ", cpf=" + getCpf() + ", nMae=" + getnMae() + ", nPai=" + getnPai()
+		+ ", dtMatric=" + getDtMatric() + ", nEscola=" + getnEscola()
+		+ ", sMatric=" + getsMatric() + ", idade=" + getIdade()
+		+ ", n1=" + getN1() + ", n2=" + getN2() + ", n3=" + getN3() + ", n4=" + getN4() + "]";
+	}
+	
 	
 }
