@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Aluno {
 	
 	private String nome, dtNasc, rg, cpf, nMae, nPai, dtMatric, nEscola, sMatric;
@@ -159,6 +161,25 @@ public class Aluno {
 		+ ", sMatric=" + getsMatric() + ", idade=" + getIdade()
 		+ ", n1=" + getN1() + ", n2=" + getN2() + ", n3=" + getN3() + ", n4=" + getN4() + "]";
 	}
+
+	/* Equals e Hashcode */
+	@Override
+	public int hashCode() {
+		return Objects.hash(nome);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		return Objects.equals(nome, other.nome);
+	}
+	
 	
 	
 }
