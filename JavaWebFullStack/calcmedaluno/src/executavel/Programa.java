@@ -26,8 +26,7 @@ public class Programa {
 		
 		System.out.println("***************************************");
 		
-		System.out.println(aluno);
-		
+		System.out.println(aluno);		
 		
 	}
 
