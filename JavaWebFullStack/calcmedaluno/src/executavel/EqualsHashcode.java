@@ -16,6 +16,15 @@ public class EqualsHashcode {
 			System.out.println("Alunos diferentes");
 		}
 		
+		aluno.setCpf("123456");
+		aluno2.setCpf("654321");
+		
+		if(aluno2.equals(aluno)) {
+			System.out.println("Alunos iguais");
+		} else {
+			System.out.println("Alunos diferentes");
+		}
+		
 	}
 
 }
