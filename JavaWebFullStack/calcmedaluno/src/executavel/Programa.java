@@ -13,10 +13,39 @@ public class Programa {
 		
 		aluno.setNome(JOptionPane.showInputDialog("Nome do Aluno: "));
 		aluno.setnEscola(JOptionPane.showInputDialog("Nome da Escola: "));
-		aluno.setN1(Integer.valueOf(JOptionPane.showInputDialog("Infome a 1º nota: ")));
-		aluno.setN2(Integer.valueOf(JOptionPane.showInputDialog("Infome a 2º nota: ")));
-		aluno.setN3(Integer.valueOf(JOptionPane.showInputDialog("Infome a 3º nota: ")));
-		aluno.setN4(Integer.valueOf(JOptionPane.showInputDialog("Infome a 4º nota: ")));
+		
+		aluno.getDisciplina().setDisc1(JOptionPane.showInputDialog("Infome a 1º Disciplina: "));
+		aluno.getDisciplina().setN1(
+				Integer.valueOf(
+						JOptionPane.showInputDialog(
+								"Qual foi a nota da disciplina " + aluno.getDisciplina().getDisc1())
+				)
+		);
+		
+		aluno.getDisciplina().setDisc2(JOptionPane.showInputDialog("Infome a 2º Disciplina: "));
+		aluno.getDisciplina().setN2(
+				Integer.valueOf(
+						JOptionPane.showInputDialog(
+								"Qual foi a nota da disciplina " + aluno.getDisciplina().getDisc2())
+				)
+		);
+		
+		aluno.getDisciplina().setDisc3(JOptionPane.showInputDialog("Infome a 3º Disciplina: "));
+		aluno.getDisciplina().setN3(
+				Integer.valueOf(
+						JOptionPane.showInputDialog(
+								"Qual foi a nota da disciplina " + aluno.getDisciplina().getDisc3())
+				)
+		);
+		
+		aluno.getDisciplina().setDisc4(JOptionPane.showInputDialog("Infome a 4º Disciplina: "));
+		aluno.getDisciplina().setN4(
+				Integer.valueOf(
+						JOptionPane.showInputDialog(
+								"Qual foi a nota da disciplina " + aluno.getDisciplina().getDisc4())
+				)
+		);
+		
 		
 		System.out.println("Aluno: " + aluno.getNome());
 		System.out.println("Escola: " + aluno.getnEscola());
