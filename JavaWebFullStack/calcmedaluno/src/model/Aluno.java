@@ -1,113 +1,116 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Aluno {
 	
 	private String nome, dtNasc, rg, cpf, nMae, nPai, dtMatric, nEscola, sMatric;
 	private int idade;
-	private Disciplina disciplina = new Disciplina();
 	
-	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
-	}
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
-	public Disciplina getDisciplina() {
-		return disciplina;
-	}
-	
-	
-	public Aluno () { }
-	
-	public Aluno (String nome) {
-		this.nome = nome;
-	}
-
+	/* Getters */
 	public String getNome() {
 		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
 	}
 
 	public String getDtNasc() {
 		return dtNasc;
 	}
 
-	public void setDtNasc(String dtNasc) {
-		this.dtNasc = dtNasc;
-	}
-
 	public String getRg() {
 		return rg;
-	}
-
-	public void setRg(String rg) {
-		this.rg = rg;
 	}
 
 	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
 	public String getnMae() {
 		return nMae;
-	}
-
-	public void setnMae(String nMae) {
-		this.nMae = nMae;
 	}
 
 	public String getnPai() {
 		return nPai;
 	}
 
-	public void setnPai(String nPai) {
-		this.nPai = nPai;
-	}
-
 	public String getDtMatric() {
 		return dtMatric;
-	}
-
-	public void setDtMatric(String dtMatric) {
-		this.dtMatric = dtMatric;
 	}
 
 	public String getnEscola() {
 		return nEscola;
 	}
 
-	public void setnEscola(String nEscola) {
-		this.nEscola = nEscola;
-	}
-
 	public String getsMatric() {
 		return sMatric;
-	}
-
-	public void setsMatric(String sMatric) {
-		this.sMatric = sMatric;
 	}
 
 	public int getIdade() {
 		return idade;
 	}
 
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
+
+	/* Setters */
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setDtNasc(String dtNasc) {
+		this.dtNasc = dtNasc;
+	}
+
+	public void setRg(String rg) {
+		this.rg = rg;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public void setnMae(String nMae) {
+		this.nMae = nMae;
+	}
+
+	public void setnPai(String nPai) {
+		this.nPai = nPai;
+	}
+
+	public void setDtMatric(String dtMatric) {
+		this.dtMatric = dtMatric;
+	}
+
+	public void setnEscola(String nEscola) {
+		this.nEscola = nEscola;
+	}
+
+	public void setsMatric(String sMatric) {
+		this.sMatric = sMatric;
+	}
+
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
 
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
+	}
+	
+	/* Métodos */
+	public Aluno () { }	
+
+	public Aluno (String nome) {
+		this.nome = nome;
+	}
 
 	/* Método que retorna a média */
 	public double getMedia() {
-		return (disciplina.getN1() + disciplina.getN2()
-				+ disciplina.getN3() + disciplina.getN4())/4;
+		return 0;
 	}
 	
 	/* Método que retorna se está aprovado */
@@ -131,20 +134,18 @@ public class Aluno {
 	}
 	
 	/* ToString */
-	
+	@Override
+	public String toString() {
+		return "Aluno [nome=" + nome + ", dtNasc=" + dtNasc + ", rg=" + rg + ", cpf=" + cpf + ", nMae=" + nMae
+				+ ", nPai=" + nPai + ", dtMatric=" + dtMatric + ", nEscola=" + nEscola + ", sMatric=" + sMatric
+				+ ", idade=" + idade + "]";
+	}
 
 	/* Equals e Hashcode */
 	@Override
 	public int hashCode() {
 		return Objects.hash(cpf, nome);
-	}
-
-	@Override
-	public String toString() {
-		return "Aluno [nome=" + nome + ", dtNasc=" + dtNasc + ", rg=" + rg + ", cpf=" + cpf + ", nMae=" + nMae
-				+ ", nPai=" + nPai + ", dtMatric=" + dtMatric + ", nEscola=" + nEscola + ", sMatric=" + sMatric
-				+ ", idade=" + idade + ", disciplina=" + disciplina + "]";
-	}
+	}	
 
 	@Override
 	public boolean equals(Object obj) {

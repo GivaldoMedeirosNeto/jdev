@@ -25,6 +25,7 @@ public class Disciplina {
 		this.disciplina = disciplina;
 	}
 
+	/* Equals e Hashcode */
 	@Override
 	public int hashCode() {
 		return Objects.hash(disciplina, nota);
@@ -43,6 +44,7 @@ public class Disciplina {
 				&& Double.doubleToLongBits(nota) == Double.doubleToLongBits(other.nota);
 	}
 
+	/* ToString */
 	@Override
 	public String toString() {
 		return "Disciplina [nota=" + nota + ", disciplina=" + disciplina + "]";
