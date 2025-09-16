@@ -36,6 +36,13 @@ public class Programa {
 			
 		}
 		
+		int remover = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina");
+		
+		if(remover == 0) {
+			int discRemovida = Integer.valueOf(JOptionPane.showInputDialog("Qual disciplina?"));
+			aluno.getDisciplinas().remove(discRemovida-1);
+		}
+		
 		System.out.println("Aluno: " + aluno);
 		System.out.println("Média do aluno: " + aluno.getMedia());
 		System.out.println(aluno.getAprovado() ? "Aprovado" : "Reprovado");
