@@ -101,19 +101,28 @@ public class Aluno {
 		this.disciplinas = disciplinas;
 	}
 	
-	/* Métodos */
+	/* Construtores */
 	public Aluno () { }	
 
 	public Aluno (String nome) {
 		this.nome = nome;
 	}
 
+	/* Métodos */
 	/* Método que retorna a média */
 	public double getMedia() {
-		return 0;
+		
+		double somaNotas = 0.0;
+		
+		for (Disciplina disciplina : disciplinas) {
+			somaNotas += disciplina.getNota();
+		}
+		
+		return somaNotas/disciplinas.size();
+		
 	}
 	
-	/* Método que retorna se está aprovado */
+	/* Método que retorna se está aprovado boleano */
 	public boolean getAprovado() {
 		double media = this.getMedia();
 		if(media >= 70) {
@@ -123,6 +132,7 @@ public class Aluno {
 		}		
 	}
 	
+	/* Método que retorna se está aprovado String */
 	public String getAprovadoString() {
 		double media = this.getMedia();
 		if(media >= 70) {
