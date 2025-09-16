@@ -11,20 +11,27 @@ public class Programa {
 	public static void main(String[] args) {
 		
 		Aluno aluno = new Aluno();
+		int qtdDisc = 0;
 		
 		
 		aluno.setNome(JOptionPane.showInputDialog("Nome do Aluno: "));
 		aluno.setnEscola(JOptionPane.showInputDialog("Nome da Escola: "));
+		qtdDisc = Integer.valueOf(JOptionPane.showInputDialog("Quantas Disciplinas: "));
 		
-		for(int pos = 1; pos <= 4; pos++) {
+		for(int pos = 1; pos <= qtdDisc; pos++) {
 			
 			Disciplina disciplina = new Disciplina();
-			disciplina.setDisciplina(JOptionPane.showInputDialog("Qual Disciplina " + pos + " de 4: "));
+			
+			disciplina.setDisciplina(
+				JOptionPane.showInputDialog("Qual Disciplina " + pos + " de " + qtdDisc +": ")
+			);
+			
 			disciplina.setNota(
 				Double.valueOf(
 					JOptionPane.showInputDialog("Qual nota para disciplina " + disciplina.getDisciplina() + ":")
 				)
 			);
+			
 			aluno.getDisciplinas().add(disciplina);
 			
 		}
