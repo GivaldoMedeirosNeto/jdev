@@ -135,8 +135,11 @@ public class Aluno {
 	/* Método que retorna se está aprovado String */
 	public String getAprovadoString() {
 		double media = this.getMedia();
-		if(media >= 70) {
-			return "Aprovado";
+		if(media >= 50) {
+			if(media >= 70) {
+				return "Aprovado";
+			}
+			return "Recuperação";
 		} else {
 			return "Reprovado";
 		}
