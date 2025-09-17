@@ -47,7 +47,7 @@ public class Disciplina {
 	/* ToString */
 	@Override
 	public String toString() {
-		return "Disciplina [nota=" + nota + ", disciplina=" + disciplina + "]";
+		return "[disciplina = " + disciplina + ", nota = " + nota + "]";
 	}
 		
 }
