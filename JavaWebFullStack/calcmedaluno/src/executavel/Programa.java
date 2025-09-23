@@ -1,6 +1,7 @@
 package executavel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -117,12 +118,18 @@ public class Programa {
 				System.out.println(disciplina.getDisciplina() + " - " + disciplina.getNota());
 			}
 			System.out.println(aluno.getAprovadoString());
-			System.out.println("- - - - - - - - - - - - - - - - - - - ");
+			
+			if(qtdAluno != 1) {
+				if(qtdAluno != listAlunos.indexOf(aluno)+1) {
+					System.out.println("- - - - - - - - - - - - - - - - - - - ");
+				}				
+			}
+
 		}
 		
 		System.out.println("***************************************");
 		
-		/* Listas separador por Aprovado, Recuperação e Reprovado */
+		/* Listas para separar os Aprovado, Recuperação e Reprovado */
 		List<Aluno> listAlunosAp = new ArrayList<Aluno>();
 		List<Aluno> listAlunosRe = new ArrayList<Aluno>();
 		List<Aluno> listAlunosRp = new ArrayList<Aluno>();
@@ -142,6 +149,32 @@ public class Programa {
 		System.out.println("Qtd de Alunos Aprovados: " + listAlunosAp.size());
 		System.out.println("Qtd de Alunos em Recuperação: " + listAlunosRe.size());
 		System.out.println("Qtd de Alunos Reprovados: " + listAlunosRp.size());
+		
+		System.out.println("***************************************");
+		
+		/* Listas para separar os Aprovado, Recuperação e Reprovado por HashMap:
+		 é uma Lista com chave identificadora para uma sequencia de valores */
+		HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
+		maps.put(StatusAluno.APROVADO, new ArrayList<Aluno>());
+		maps.put(StatusAluno.RECUPECACAO, new ArrayList<Aluno>());
+		maps.put(StatusAluno.REPROVADO, new ArrayList<Aluno>());
+		
+		for (Aluno aluno : listAlunos) {
+			
+			if(aluno.getAprovadoString().equalsIgnoreCase(StatusAluno.APROVADO)) {
+				maps.get(StatusAluno.APROVADO).add(aluno);
+			} else if (aluno.getAprovadoString().equalsIgnoreCase(StatusAluno.RECUPECACAO)) {
+				maps.get(StatusAluno.RECUPECACAO).add(aluno);
+			} else {
+				maps.get(StatusAluno.REPROVADO).add(aluno);
+			}
+			
+		}
+		
+		System.out.println("por HashMap");
+		System.out.println("Qtd de Alunos Aprovados: " + maps.get(StatusAluno.APROVADO).size());
+		System.out.println("Qtd de Alunos em Recuperação: " + maps.get(StatusAluno.RECUPECACAO).size());
+		System.out.println("Qtd de Alunos Reprovados: " + maps.get(StatusAluno.REPROVADO).size());
 		
 		System.out.println("***************************************");
 
