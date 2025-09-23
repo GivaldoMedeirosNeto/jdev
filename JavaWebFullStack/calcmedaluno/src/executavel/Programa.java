@@ -39,8 +39,8 @@ public class Programa {
 			
 			Aluno aluno = new Aluno();
 			
-			aluno.setNome(JOptionPane.showInputDialog("Qual o nome do " + qtdAluno + " aluno:"));
-			aluno.setnEscola(JOptionPane.showInputDialog("Qual o nome da Escola " + qtdAluno + " aluno:"));
+			aluno.setNome(JOptionPane.showInputDialog("Qual o nome do " + qtd + " aluno:"));
+			aluno.setnEscola(JOptionPane.showInputDialog("Qual o nome da Escola " + qtd + " aluno:"));
 			qtdDisc = Integer.valueOf(
 				JOptionPane.showInputDialog("Quantas Disciplinas para o aluno " + aluno.getNome() +":")
 			);
@@ -87,6 +87,10 @@ public class Programa {
 			
 		}
 		
+		/* Operador Ternário
+		System.out.println(aluno.getAprovado() ? "Aprovado" : "Reprovado");
+		*/
+		
 		System.out.println("***************************************");
 		
 		for (Aluno aluno : LisAlunos) {
@@ -98,9 +102,15 @@ public class Programa {
 		
 		System.out.println("***************************************");
 		
-		/* Operador Ternário
-		System.out.println(aluno.getAprovado() ? "Aprovado" : "Reprovado");
-		*/	
+		
+		/* Pesquisa Aluno */
+		for (Aluno aluno : LisAlunos) {
+			if(aluno.getNome().equalsIgnoreCase("penelope")) {
+				JOptionPane.showMessageDialog(null, "A gata mais linda do pai.");
+			}
+			
+		}
+			
 
 	}
 
