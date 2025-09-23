@@ -39,8 +39,8 @@ public class Programa {
 			
 			Aluno aluno = new Aluno();
 			
-			aluno.setNome(JOptionPane.showInputDialog("Qual o nome do Aluno: "));
-			aluno.setnEscola(JOptionPane.showInputDialog("Qual o nome da Escola: "));
+			aluno.setNome(JOptionPane.showInputDialog("Qual o nome do " + qtdAluno + " aluno:"));
+			aluno.setnEscola(JOptionPane.showInputDialog("Qual o nome da Escola " + qtdAluno + " aluno:"));
 			qtdDisc = Integer.valueOf(
 				JOptionPane.showInputDialog("Quantas Disciplinas para o aluno " + aluno.getNome() +":")
 			);
