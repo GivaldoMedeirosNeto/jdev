@@ -141,7 +141,7 @@ public class Aluno {
 			}
 			return StatusAluno.RECUPECACAO;
 		} else {
-			return StatusAluno.RECUPECACAO;
+			return StatusAluno.REPROVADO;
 		}
 		
 	}

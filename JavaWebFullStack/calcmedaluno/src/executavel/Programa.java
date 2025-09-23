@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 
 import model.Aluno;
 import model.Disciplina;
+import model.StatusAluno;
 
 public class Programa {
 	
@@ -97,8 +98,8 @@ public class Programa {
 		for (Aluno aluno : listAlunos) {
 			if(aluno.getNome().equalsIgnoreCase("penelope")) {
 				JOptionPane.showMessageDialog(null, "A gata mais linda do pai.");
+				break;
 			}
-			break;
 		}
 		
 		/* Removendo Aluno */
@@ -118,6 +119,29 @@ public class Programa {
 			System.out.println(aluno.getAprovadoString());
 			System.out.println("- - - - - - - - - - - - - - - - - - - ");
 		}
+		
+		System.out.println("***************************************");
+		
+		/* Listas separador por Aprovado, Recuperação e Reprovado */
+		List<Aluno> listAlunosAp = new ArrayList<Aluno>();
+		List<Aluno> listAlunosRe = new ArrayList<Aluno>();
+		List<Aluno> listAlunosRp = new ArrayList<Aluno>();
+		
+		for (Aluno aluno : listAlunos) {
+			
+			if(aluno.getAprovadoString().equalsIgnoreCase(StatusAluno.APROVADO)) {
+				listAlunosAp.add(aluno);
+			} else if (aluno.getAprovadoString().equalsIgnoreCase(StatusAluno.RECUPECACAO)) {
+				listAlunosRe.add(aluno);
+			} else {
+				listAlunosRp.add(aluno);
+			}
+			
+		}
+		
+		System.out.println("Qtd de Alunos Aprovados: " + listAlunosAp.size());
+		System.out.println("Qtd de Alunos em Recuperação: " + listAlunosRe.size());
+		System.out.println("Qtd de Alunos Reprovados: " + listAlunosRp.size());
 		
 		System.out.println("***************************************");
 
