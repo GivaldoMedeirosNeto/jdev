@@ -93,6 +93,7 @@ public class Programa {
 			System.out.println("Aluno: " + aluno);
 			System.out.println("Média do aluno: " + aluno.getMedia());
 			System.out.println(aluno.getAprovadoString());
+			System.out.println("- - - - - - - - - - - - - - - - - - - ");
 		}
 		
 		System.out.println("***************************************");
