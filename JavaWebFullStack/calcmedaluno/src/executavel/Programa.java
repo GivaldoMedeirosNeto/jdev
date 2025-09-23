@@ -93,32 +93,33 @@ public class Programa {
 		
 		System.out.println("***************************************");
 		
-		for (Aluno aluno : listAlunos) {
-			System.out.println("Aluno: " + aluno);
-			System.out.println("Média do aluno: " + aluno.getMedia());
-			System.out.println(aluno.getAprovadoString());
-			System.out.println("- - - - - - - - - - - - - - - - - - - ");
-		}
-		
-		System.out.println("***************************************");
-		
-		
 		/* Pesquisa Aluno */
 		for (Aluno aluno : listAlunos) {
 			if(aluno.getNome().equalsIgnoreCase("penelope")) {
 				JOptionPane.showMessageDialog(null, "A gata mais linda do pai.");
 			}
-			
+			break;
 		}
 		
 		/* Removendo Aluno */
 		for (Aluno aluno : listAlunos) {
 			if(aluno.getNome().equalsIgnoreCase("teste")) {
 				listAlunos.remove(aluno);
-			}
-			JOptionPane.showMessageDialog(null, "O aluno teste foi removido");
+				JOptionPane.showMessageDialog(null, "O aluno teste foi removido");
+			}			
 		}
-			
+		
+		for (Aluno aluno : listAlunos) {
+			System.out.println("Aluno: " + aluno);
+			System.out.println("Média do aluno: " + aluno.getMedia());
+			for (Disciplina disciplina : aluno.getDisciplinas()) {
+				System.out.println(disciplina.getDisciplina() + " - " + disciplina.getNota());
+			}
+			System.out.println(aluno.getAprovadoString());
+			System.out.println("- - - - - - - - - - - - - - - - - - - ");
+		}
+		
+		System.out.println("***************************************");
 
 	}
 
