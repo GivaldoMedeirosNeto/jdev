@@ -13,7 +13,7 @@ public class Programa {
 	/* Programa Calc Média do Aluno */
 	public static void main(String[] args) {
 		
-		List<Aluno> LisAlunos = new ArrayList<Aluno>();
+		List<Aluno> listAlunos = new ArrayList<Aluno>();
 		int qtdDisc = 0;
 		int qtdAluno = 1;
 		int remover;
@@ -83,7 +83,7 @@ public class Programa {
 				
 			} while ( remover == 0 );
 			
-			LisAlunos.add(aluno);
+			listAlunos.add(aluno);
 			
 		}
 		
@@ -93,7 +93,7 @@ public class Programa {
 		
 		System.out.println("***************************************");
 		
-		for (Aluno aluno : LisAlunos) {
+		for (Aluno aluno : listAlunos) {
 			System.out.println("Aluno: " + aluno);
 			System.out.println("Média do aluno: " + aluno.getMedia());
 			System.out.println(aluno.getAprovadoString());
@@ -104,11 +104,19 @@ public class Programa {
 		
 		
 		/* Pesquisa Aluno */
-		for (Aluno aluno : LisAlunos) {
+		for (Aluno aluno : listAlunos) {
 			if(aluno.getNome().equalsIgnoreCase("penelope")) {
 				JOptionPane.showMessageDialog(null, "A gata mais linda do pai.");
 			}
 			
+		}
+		
+		/* Removendo Aluno */
+		for (Aluno aluno : listAlunos) {
+			if(aluno.getNome().equalsIgnoreCase("teste")) {
+				listAlunos.remove(aluno);
+			}
+			JOptionPane.showMessageDialog(null, "O aluno teste foi removido");
 		}
 			
 
