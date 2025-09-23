@@ -137,11 +137,11 @@ public class Aluno {
 		double media = this.getMedia();
 		if(media >= 50) {
 			if(media >= 70) {
-				return "Aprovado";
+				return StatusAluno.APROVADO;
 			}
-			return "Recuperação";
+			return StatusAluno.RECUPECACAO;
 		} else {
-			return "Reprovado";
+			return StatusAluno.RECUPECACAO;
 		}
 		
 	}
