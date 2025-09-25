@@ -64,5 +64,8 @@ public class Pessoa {
 		return idade;
 	}
 	
+	public boolean maiorIdade() {
+		return idade >= 18;
+	}
 
 }
