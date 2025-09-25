@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Aluno {
+public class Aluno extends Pessoa {
 	
-	private String nome, dtNasc, rg, cpf, nMae, nPai, dtMatric, nEscola, sMatric;
-	private int idade;
+	private String dtMatric, nEscola, sMatric;
 	
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
@@ -105,7 +104,7 @@ public class Aluno {
 	public Aluno () { }	
 
 	public Aluno (String nome) {
-		this.nome = nome;
+		super.nome = nome;
 	}
 
 	/* Métodos */
