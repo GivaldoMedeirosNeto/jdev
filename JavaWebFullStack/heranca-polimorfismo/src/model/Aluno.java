@@ -47,4 +47,9 @@ public class Aluno extends Pessoa {
 				+ "]";
 	}
 	
+	@Override
+	public boolean maiorIdade() {
+		return super.getIdade() >= 16;
+	}
+	
 }

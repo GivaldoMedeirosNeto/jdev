@@ -29,6 +29,12 @@ public class executavel {
 		System.out.println(diretor);
 		System.out.println(secretario);
 		
+		System.out.println("-----------------------");
+		
+		System.out.println(aluno.maiorIdade());
+		System.out.println(diretor.maiorIdade());
+		System.out.println(secretario.maiorIdade());
+		
 	}
 
 }
