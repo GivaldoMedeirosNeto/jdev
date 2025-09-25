@@ -6,6 +6,9 @@ public abstract class Pessoa {
 	private String dtNasc, rg, cpf, nMae, nPai;
 	private int idade;
 	
+	/* Metodo abastract é obrigatorio nas classe filhas ser sobrescritas */
+	public abstract double salario();
+	
 	/* Setters */
 	public void setNome(String nome) {
 		this.nome = nome;

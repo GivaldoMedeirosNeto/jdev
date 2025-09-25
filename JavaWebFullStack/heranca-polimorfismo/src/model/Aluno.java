@@ -51,5 +51,10 @@ public class Aluno extends Pessoa {
 	public boolean maiorIdade() {
 		return super.getIdade() >= 16;
 	}
+
+	@Override
+	public double salario() {
+		return 1530;
+	}
 	
 }

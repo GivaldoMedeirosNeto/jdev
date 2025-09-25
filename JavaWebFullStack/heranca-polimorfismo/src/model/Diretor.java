@@ -46,7 +46,10 @@ public class Diretor extends Pessoa {
 				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
 				+ "]";
 	}
-	
-	
+
+	@Override
+	public double salario() {
+		return 3900;
+	}	
 
 }
