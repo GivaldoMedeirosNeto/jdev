@@ -7,4 +7,5 @@
 [📚 programajava ](../JavaWebFullStack/programajava/)<br>
 [📚 operadoreslogicos ](../JavaWebFullStack/operadoreslogicos/)<br>
 [📚 calcmedaluno ](../JavaWebFullStack/calcmedaluno/)<br>
+[📚 equalshascode ](../JavaWebFullStack/equalshascode/)<br>
 [📚 heranca-polimorfismo ](../JavaWebFullStack/heranca-polimorfismo/)<br>
