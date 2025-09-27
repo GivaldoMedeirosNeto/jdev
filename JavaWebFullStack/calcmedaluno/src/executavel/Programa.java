@@ -150,7 +150,7 @@ public class Programa {
 		System.out.println("Qtd de Alunos em Recuperação: " + listAlunosRe.size());
 		System.out.println("Qtd de Alunos Reprovados: " + listAlunosRp.size());
 		
-		System.out.println("***************************************");
+		System.out.println("****************************************");
 		
 		/* Listas para separar os Aprovado, Recuperação e Reprovado por HashMap:
 		 é uma Lista com chave identificadora para uma sequencia de valores */
@@ -176,7 +176,7 @@ public class Programa {
 		System.out.println("Qtd de Alunos em Recuperação: " + maps.get(StatusAluno.RECUPECACAO).size());
 		System.out.println("Qtd de Alunos Reprovados: " + maps.get(StatusAluno.REPROVADO).size());
 		
-		System.out.println("***************************************");
+		System.out.println("****************************************");
 
 	}
 
