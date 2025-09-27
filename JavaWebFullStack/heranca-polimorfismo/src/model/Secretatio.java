@@ -49,7 +49,7 @@ public class Secretatio extends Pessoa {
 
 	@Override
 	public double salario() {
-		return 2200 * 0.8;
+		return 2200;
 	}
 		
 }
