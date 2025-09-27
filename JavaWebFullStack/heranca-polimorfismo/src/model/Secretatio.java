@@ -1,6 +1,8 @@
 package model;
 
-public class Secretatio extends Pessoa {
+import interfaces.PermitirAcesso;
+
+public class Secretatio extends Pessoa implements PermitirAcesso {
 	
 	private String registro, nivelCargo, experiencia;
 
@@ -50,6 +52,12 @@ public class Secretatio extends Pessoa {
 	@Override
 	public double salario() {
 		return 2200;
+	}
+
+	/* Interfaces */
+	@Override
+	public boolean autenticar() {
+		return false;
 	}
 		
 }
