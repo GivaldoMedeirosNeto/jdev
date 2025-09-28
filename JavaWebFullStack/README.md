@@ -8,5 +8,6 @@
 [📚 operadoreslogicos ](../JavaWebFullStack/operadoreslogicos/)<br>
 [📚 calcmedaluno ](../JavaWebFullStack/calcmedaluno/)<br>
 [📚 equalshascode ](../JavaWebFullStack/equalshascode/)<br>
-[📚 hashmaps ](../JavaWebFullStack/hashmaps/)<br>
+[📚 hashmap-constantes ](../JavaWebFullStack/hashmap-constantes/)<br>
 [📚 heranca-polimorfismo ](../JavaWebFullStack/heranca-polimorfismo/)<br>
+[📚 proj-escola ](../JavaWebFullStack/proj-escola/)<br>
