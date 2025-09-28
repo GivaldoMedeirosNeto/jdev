@@ -63,6 +63,10 @@ public abstract class Pessoa {
 		this.idade = idade;
 	}
 	
+	public boolean maiorIdade() {
+		return idade >= 18;
+	}
+	
 	/* Metodo abastract é obrigatorio nas classe filhas ser sobrescritas */
 	public abstract double salario();
 
