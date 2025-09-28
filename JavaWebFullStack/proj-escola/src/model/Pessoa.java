@@ -1,6 +1,6 @@
 package model;
 
-public class Pessoa {
+public abstract class Pessoa {
 	
 	protected String nome, dtNasc, rg, cpf, nMae, nPai;
 	protected int idade;
@@ -62,5 +62,8 @@ public class Pessoa {
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
+	
+	/* Metodo abastract é obrigatorio nas classe filhas ser sobrescritas */
+	public abstract double salario();
 
 }
