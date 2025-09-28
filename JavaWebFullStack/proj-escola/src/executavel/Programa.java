@@ -104,6 +104,7 @@ public class Programa {
 			if(aluno.getNome().equalsIgnoreCase("teste")) {
 				listAlunos.remove(aluno);
 				JOptionPane.showMessageDialog(null, "O aluno teste foi removido");
+				break;
 			}			
 		}
 		
