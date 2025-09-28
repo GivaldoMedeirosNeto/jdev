@@ -173,4 +173,14 @@ private String dtMatric, nEscola, sMatric;
 		return Objects.equals(cpf, other.cpf) && Objects.equals(nome, other.nome);
 	}
 
+	@Override
+	public boolean maiorIdade() {
+		return super.getIdade() >= 16;
+	}
+
+	@Override
+	public double salario() {
+		return 1530;
+	}
+
 }
