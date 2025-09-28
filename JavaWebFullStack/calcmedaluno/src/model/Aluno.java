@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Aluno extends Pessoa {
+public class Aluno {
 	
+	private String nome, dtNasc, rg, cpf, nMae, nPai;
+	private int idade;
 	private String dtMatric, nEscola, sMatric;
 	
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
@@ -104,7 +106,7 @@ public class Aluno extends Pessoa {
 	public Aluno () { }	
 
 	public Aluno (String nome) {
-		super.nome = nome;
+		this.nome = nome;
 	}
 
 	/* Métodos */
@@ -136,11 +138,11 @@ public class Aluno extends Pessoa {
 		double media = this.getMedia();
 		if(media >= 50) {
 			if(media >= 70) {
-				return StatusAluno.APROVADO;
+				return "Aprovado";
 			}
-			return StatusAluno.RECUPECACAO;
+			return "Recuperação";
 		} else {
-			return StatusAluno.REPROVADO;
+			return "Reprovado";
 		}
 		
 	}
