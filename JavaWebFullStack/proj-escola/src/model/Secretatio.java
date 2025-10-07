@@ -5,7 +5,6 @@ import interfaces.PermitirAcesso;
 public class Secretatio extends Pessoa implements PermitirAcesso {
 	
 	private String registro, nivelCargo, experiencia;
-	private String login, senha;
 
 	/* Construtores */
 	public Secretatio() { }
@@ -27,14 +26,6 @@ public class Secretatio extends Pessoa implements PermitirAcesso {
 		this.experiencia = experiencia;
 	}
 	
-	public void setLogin(String login) {
-		this.login = login;
-	}
-	
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-	
 	/* Getters */
 	public String getRegistro() {
 		return registro;
@@ -46,14 +37,6 @@ public class Secretatio extends Pessoa implements PermitirAcesso {
 
 	public String getExperiencia() {
 		return experiencia;
-	}
-	
-	public String getLogin() {
-		return login;
-	}
-	
-	public String getSenha() {
-		return senha;
 	}
 
 	/* toString */
@@ -73,7 +56,7 @@ public class Secretatio extends Pessoa implements PermitirAcesso {
 
 	/* Interfaces */
 	@Override
-	public boolean autenticar() {
+	public boolean autenticar(String login, String senha) {
 		return login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin");
 	}
 		

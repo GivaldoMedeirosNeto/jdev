@@ -7,6 +7,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import constante.StatusAluno;
+import interfaces.PermitirAcesso;
 import model.Aluno;
 import model.Disciplina;
 import model.Secretatio;
@@ -17,15 +18,25 @@ public class Programa {
 	public static void main(String[] args) {
 		
 		List<Aluno> listAlunos = new ArrayList<Aluno>();
-		Secretatio secretario = new Secretatio();
+		
 		int qtdDisc = 0;
 		int qtdAluno = 1;
 		int remover;
 		
+		/*
+		Secretatio secretario = new Secretatio(); // Diretamente no objeto
 		secretario.setLogin(JOptionPane.showInputDialog("Informe o Login:"));
 		secretario.setSenha(JOptionPane.showInputDialog("Informe a Senha:"));
 		
-		if(secretario.autenticar()) {
+		PermitirAcesso acesso = new Secretatio(); // pela interface
+		
+		*/
+		
+				
+		String login = JOptionPane.showInputDialog("Informe o Login:");
+		String senha = JOptionPane.showInputDialog("Informe a Senha:");
+		
+		if(new Secretatio().autenticar(login, senha)) {
 			
 			do {
 				
