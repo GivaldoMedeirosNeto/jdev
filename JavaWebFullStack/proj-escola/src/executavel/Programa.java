@@ -23,7 +23,7 @@ public class Programa {
 		int remover;
 		
 		secretario.setLogin(JOptionPane.showInputDialog("Informe o Login:"));
-		secretario.setSenha(JOptionPane.showInputDialog("Informe o Login:"));
+		secretario.setSenha(JOptionPane.showInputDialog("Informe a Senha:"));
 		
 		if(secretario.autenticar()) {
 			
@@ -183,6 +183,8 @@ public class Programa {
 			
 			System.out.println("****************************************");
 			
+		} else {
+			JOptionPane.showMessageDialog(null, "Sem acesso ao sistema.");
 		}
 
 	}
