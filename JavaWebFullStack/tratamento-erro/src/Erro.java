@@ -50,6 +50,9 @@ public class Erro {
 			
 		} catch (Exception e) {
 			System.out.println(e.getStackTrace());
+		} finally {
+			System.out.println("Estou executando independente se houve ou não um erro no sistema.!");
+			JOptionPane.showMessageDialog(null, "Obrigado,\nvolte sempre");
 		}
 		
 		
