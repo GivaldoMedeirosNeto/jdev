@@ -6,9 +6,11 @@ public class Erro {
 		
 		Pessoa pessoa = null;
 		
+		
 		try {
+			pessoa.setIdade(Integer.valueOf("teste"));
 			System.out.println(pessoa.getNome());
-		} catch (Exception e) {
+		} catch (NullPointerException e) {
 			
 			StringBuilder msg = new StringBuilder();
 			
@@ -16,15 +18,38 @@ public class Erro {
 			System.out.println(e.getMessage());				
 			
 			for(int i = 0; i < e.getStackTrace().length; i++) {
+				msg.append("\nErro: " + e.getMessage());
 				msg.append("\nMensagem do Erro: " + e.getClass().getName());
 				msg.append("\nClasse do Erro: " + e.getStackTrace()[i].getClassName());
 				msg.append("\nMétodo do Erro: " + e.getStackTrace()[i].getMethodName());
-				msg.append("\nLinha  do Erro: " + e.getStackTrace()[i].getLineNumber());
+				msg.append("\nLinha  do Erro: " + e.getStackTrace()[i].getLineNumber());				
+				msg.append("\n");
 				
 			}
 			
 			JOptionPane.showMessageDialog(null, "Erro no Sistema" + msg.toString());
 			
+		}  catch (NumberFormatException e) {
+			
+			StringBuilder msg = new StringBuilder();
+			
+			e.printStackTrace();
+			System.out.println(e.getMessage());				
+			
+			for(int i = 0; i < e.getStackTrace().length; i++) {
+				msg.append("\nErro: " + e.getMessage());
+				msg.append("\nMensagem do Erro: " + e.getClass().getName());
+				msg.append("\nClasse do Erro: " + e.getStackTrace()[i].getClassName());
+				msg.append("\nMétodo do Erro: " + e.getStackTrace()[i].getMethodName());
+				msg.append("\nLinha  do Erro: " + e.getStackTrace()[i].getLineNumber());				
+				msg.append("\n");
+				
+			}
+			
+			JOptionPane.showMessageDialog(null, "Erro no Sistema" + msg.toString());
+			
+		} catch (Exception e) {
+			System.out.println(e.getStackTrace());
 		}
 		
 		
