@@ -1,5 +1,7 @@
 package executavel;
 
+import javax.swing.JOptionPane;
+
 public class Executavel {
 	
 	public static void main(String[] args) {
@@ -17,6 +19,23 @@ public class Executavel {
 			System.out.println(notas[i]);
 		}
 		
+		System.out.println("*********************************");
+		
+		String qtd = JOptionPane.showInputDialog("Me informe um numero: ");		
+		Integer[] array = new Integer[Integer.valueOf(qtd)];
+		
+		for(int i = 0; i < array.length; i++) {
+			array[i] = i * 5;
+			System.out.println(array[i]);
+		}
+		
+		System.out.println("*********************************");
+		
+		String[] valores = {"Penelópe", "10", "Neginha", "Dengosa" };
+		
+		for(int i = 0; i < valores.length; i++) {
+			System.out.println(valores[i]);
+		}
 		
 	}
 
