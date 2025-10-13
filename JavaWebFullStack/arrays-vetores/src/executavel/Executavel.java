@@ -37,6 +37,35 @@ public class Executavel {
 			System.out.println(valores[i]);
 		}
 		
+		System.out.println("*********************************");
+		
+		System.out.println("Descobrindo a maior e a menor numero");
+		
+		int max = 0;
+		for(int i = 0; i < array.length; i++) {
+			if(i == 0) {
+				max = array[i];
+			} else {
+				if(array[i] > max) {
+					max = array[i];
+				}
+			}
+		}
+		
+		int min = 0;
+		for(int i = 0; i < array.length; i++) {
+			if(i == 0) {
+				min = array[i];
+			} else {
+				if(array[i] < min) {
+					min = array[i];
+				}
+			}
+		}
+		
+		System.out.println("O maior numero encontrado foi : " + max);
+		System.out.println("O menor numero encontrado foi : " + min);
+		
 	}
 
 }
