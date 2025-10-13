@@ -116,7 +116,7 @@ private String dtMatric, nEscola, sMatric;
 		double somaNotas = 0.0;
 		
 		for (Disciplina disciplina : disciplinas) {
-			somaNotas += disciplina.getNota();
+			somaNotas += disciplina.getMediaNotas();
 		}
 		
 		return somaNotas/disciplinas.size();

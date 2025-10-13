@@ -67,11 +67,15 @@ public class Programa {
 							JOptionPane.showInputDialog("Qual o nome da Disciplina " + pos + " de " + qtdDisc +": ")
 						);
 						
-						disciplina.setNota(
-							Double.valueOf(
-								JOptionPane.showInputDialog("Qual nota para disciplina " + disciplina.getDisciplina() + ":")
-							)
-						);
+						double[] notas = new double[disciplina.getNota().length];
+						for(int i = 0; i<disciplina.getNota().length; i++) {
+							notas[i] = Double.valueOf(
+								JOptionPane.showInputDialog(
+									"Informe a " + (i+1) +"º nota da disciplina " + disciplina.getDisciplina() + ":")
+								);							
+						}
+						
+						disciplina.setNota(notas);
 						
 						aluno.getDisciplinas().add(disciplina);
 						
