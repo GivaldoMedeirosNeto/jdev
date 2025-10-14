@@ -12,4 +12,5 @@
 [📚 heranca-polimorfismo ](../JavaWebFullStack/heranca-polimorfismo/)<br>
 [📚 tratamento-erro ](../JavaWebFullStack/tratamento-erro/)<br>
 [📚 arrays-vetores ](../JavaWebFullStack/arrays-vetores/)<br>
+[📚 thread-aula ](../JavaWebFullStack/thread-aula/)<br>
 [📚 proj-escola ](../JavaWebFullStack/proj-escola/)<br>
