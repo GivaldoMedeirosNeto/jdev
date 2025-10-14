@@ -71,6 +71,7 @@ public class TelaThread extends JDialog {
 		
 		jbStop.setPreferredSize(new Dimension(80, 30));
 		grid.gridx ++;
+		jbStop.setEnabled(false);
 		jPanel.add(jbStop, grid);
 		
 		jbStart.addActionListener(new ActionListener() {			
@@ -124,7 +125,7 @@ public class TelaThread extends JDialog {
 		public void run() {
 			while(true) {
 				tfEmail.setText(
-					new SimpleDateFormat("dd/MM/yy hh:mm:ss").format(Calendar.getInstance().getTime())
+					new SimpleDateFormat("dd/MM/yyyy hh:mm:ss").format(Calendar.getInstance().getTime())
 				);
 				try {
 					Thread.sleep(3000);
