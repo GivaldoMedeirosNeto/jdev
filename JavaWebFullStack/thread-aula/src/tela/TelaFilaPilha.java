@@ -17,14 +17,8 @@ import javax.swing.JTextField;
 public class TelaFilaPilha extends JDialog {
 	
 	private JPanel jPanel = new JPanel(new GridBagLayout());
-		
-	private JLabel jLabel1 = new JLabel("E-MAIL");
-	private JTextField jText1 = new JTextField();
 	
-	private JLabel jLabel2 = new JLabel("NOME");
-	private JTextField jText2 = new JTextField();
-	
-	private JButton jbAdd = new JButton("Add");
+	private JButton jbStart = new JButton("Start");
 	private JButton jbStop = new JButton("STOP");
 	
 	private ImplementacaoFilaThread fila = new ImplementacaoFilaThread();
@@ -43,39 +37,45 @@ public class TelaFilaPilha extends JDialog {
 		grid.insets = new Insets(5, 10, 5, 5);
 		grid.anchor = GridBagConstraints.WEST;
 		
-		jLabel1.setPreferredSize(new Dimension(200,25));
-		jPanel.add(jLabel1, grid);		
 		
-		jText1.setPreferredSize(new Dimension(200, 25));
+		
+		jbStart.setPreferredSize(new Dimension(80, 30));
 		grid.gridy ++;
-		jPanel.add(jText1, grid);
-		
-		jLabel2.setPreferredSize(new Dimension(200,25));
-		grid.gridy ++;
-		jPanel.add(jLabel2, grid);		
-		
-		jText2.setPreferredSize(new Dimension(200, 25));
-		grid.gridy ++;
-		jPanel.add(jText2, grid);
-		
-		grid.gridwidth = 1;
-		
-		jbAdd.setPreferredSize(new Dimension(80, 30));
-		grid.gridy ++;
-		jPanel.add(jbAdd, grid);
+		jPanel.add(jbStart, grid);
 		
 		jbStop.setPreferredSize(new Dimension(80, 30));
-		grid.gridx ++;
+		grid.gridy ++;
 		jPanel.add(jbStop, grid);
 		
-		jbAdd.addActionListener(new ActionListener() {			
+		jbStart.addActionListener(new ActionListener() {			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				objFilaThread filaThread = new objFilaThread();
-				filaThread.setEmail(jText1.getText());
-				filaThread.setNome(jText2.getText());
 				
-				fila.add(filaThread);
+				if(fila == null) {
+					fila = new ImplementacaoFilaThread();
+					fila.start();
+				}
+				
+				for(int qtd = 1; qtd <= 100; qtd++) {
+					objFilaThread filaThread = new objFilaThread();
+					filaThread.setEmail("Enviando arquivo para o email");
+					if(qtd == 1) {
+						filaThread.setNome(qtd + " Arquivo enviado ... ");
+					} else {
+						filaThread.setNome(qtd + " Arquivos enviados ... ");
+					}
+					
+					
+					fila.add(filaThread);
+				}
+			}
+		});
+		
+		jbStop.addActionListener(new ActionListener() {			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				fila.stop();
+				fila = null;
 			}
 		});
 		
