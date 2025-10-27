@@ -31,6 +31,8 @@ public class LerArquivo {
 			System.out.println(pessoa);
 		}
 		
+		lerArquivo.close();
+		
 	}
 
 }
