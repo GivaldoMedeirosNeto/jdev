@@ -1,4 +1,4 @@
-package arquivos;
+package csv;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -6,11 +6,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Arquivos {
+import arquivos.Pessoa;
+
+public class ArquivoCSV {
 	
 	public static void main(String[] args) throws IOException {
 		
-		File arquivo = new File("E:\\eclipse-workspace\\cursos\\Jdev\\JavaWebFullStack\\txt-excel\\arquivo.txt");
+		File arquivo = new File("E:\\eclipse-workspace\\cursos\\Jdev\\JavaWebFullStack\\txt-excel\\arquivo.csv");
 		
 		if(!arquivo.exists()) {
 			arquivo.createNewFile();
@@ -33,7 +35,6 @@ public class Arquivos {
 		
 		escrever.flush();
 		escrever.close();
-		
 		
 	}
 
