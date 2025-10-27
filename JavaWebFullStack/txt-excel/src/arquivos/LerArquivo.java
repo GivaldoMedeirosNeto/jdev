@@ -27,7 +27,9 @@ public class LerArquivo {
 			}
 		}
 		
-		System.out.println(pessoas);
+		for (Pessoa pessoa : pessoas) {
+			System.out.println(pessoa);
+		}
 		
 	}
 
