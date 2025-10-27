@@ -3,6 +3,8 @@ package arquivos;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Arquivos {
 	
@@ -16,12 +18,17 @@ public class Arquivos {
 		
 		FileWriter escrever = new FileWriter(arquivo);
 		
-		escrever.write("meu texto no arquivo");		
-		escrever.write("\n");
-		escrever.write("Escrevendo na segunda linha com arquivo já criado\n");
+		Pessoa p1 = new Pessoa("Penelope", "nega@gsmn.dev.br");
+		Pessoa p2 = new Pessoa("Givaldo", "givaldoa@gsmn.dev.br");
+		Pessoa p3 = new Pessoa("Mayara", "mayara@gsmn.dev.br");
 		
-		for (int i  = 1;i <= 10; i++ ) {
-			escrever.write("Texto da linha " + i + "\n");
+		List<Pessoa> pessoas = new ArrayList<Pessoa>();
+		pessoas.add(p1);
+		pessoas.add(p2);
+		pessoas.add(p3);
+		
+		for (Pessoa p: pessoas) {
+			escrever.write(p.getNome() + ";" + p.getEmail() + ":\n");
 		}
 		
 		escrever.flush();
