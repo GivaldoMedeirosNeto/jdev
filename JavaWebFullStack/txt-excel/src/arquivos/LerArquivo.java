@@ -3,6 +3,8 @@ package arquivos;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class LerArquivo {
@@ -14,10 +16,18 @@ public class LerArquivo {
 		
 		Scanner lerArquivo = new Scanner(arquivo, "UTF-8");
 		
+		List<Pessoa> pessoas = new ArrayList<Pessoa>();
+		
 		while(lerArquivo.hasNext()) {
 			String linha = lerArquivo.nextLine();
-			System.out.println(linha);
+			if(linha != null && !linha.isEmpty()) {
+				String[] dados = linha.split("\\;");
+				Pessoa p = new Pessoa(dados[0], dados[1]);
+				pessoas.add(p);
+			}
 		}
+		
+		System.out.println(pessoas);
 		
 	}
 
