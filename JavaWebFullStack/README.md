@@ -15,5 +15,5 @@
 [📚 thread-aula ](../JavaWebFullStack/thread-aula/)<br>
 [📚 datas-horas ](../JavaWebFullStack/datas-horas/)<br>
 [📚 txt-excel ](../JavaWebFullStack/txt-excel/)<br>
-[📚 send-email ](../JavaWebFullStack/send-email/)<br>
+[📚 send-email ](../JavaWebFullStack/send-emailtes/)<br>
 [📚 proj-escola ](../JavaWebFullStack/proj-escola/)<br>
