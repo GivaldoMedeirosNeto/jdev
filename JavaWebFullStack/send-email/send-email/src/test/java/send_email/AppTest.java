@@ -19,7 +19,8 @@ public class AppTest {
 			mensagem.toString()
 		);
 		
-		ObjSendMail.enviar(true);	
+		ObjSendMail.enviar(true);
+		ObjSendMail.enviarAnexo(true);
 		
 	}
 	
