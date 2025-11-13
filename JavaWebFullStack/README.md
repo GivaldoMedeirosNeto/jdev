@@ -16,4 +16,5 @@
 [📚 datas-horas ](../JavaWebFullStack/datas-horas/)<br>
 [📚 txt-excel ](../JavaWebFullStack/txt-excel/)<br>
 [📚 send-email ](../JavaWebFullStack/send-email/)<br>
+[📚 pos-java-jdbc ](../JavaWebFullStack/pos-java-jdbc/)<br>
 [📚 proj-escola ](../JavaWebFullStack/proj-escola/)<br>
