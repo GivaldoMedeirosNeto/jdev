@@ -123,4 +123,24 @@ public class UserPosDAO {
 		
 	}
 	
+	public void deletar(int id) {
+		
+		String sql = "DELETE FROM userposjava where id = " + id;
+		
+		try {
+			PreparedStatement delet = connection.prepareStatement(sql);
+			delet.execute();			
+			connection.commit();
+			
+		} catch (SQLException e) {
+			try {
+				connection.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+		}
+		
+	}
+	
 }

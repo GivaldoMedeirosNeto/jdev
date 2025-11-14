@@ -55,6 +55,15 @@ public class TesteConexao {
 		userPosJava = dao.buscar(3);
 		System.out.println(userPosJava);
 		
+		System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
+		
+		dao.deletar(3);
+		
+		List<UserPosJava> list1 =  dao.listar();
+		for (UserPosJava userPosJava1 : list1) {
+			System.out.println(userPosJava1);
+		}
+		
 	}
 
 }
