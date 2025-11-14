@@ -29,6 +29,11 @@ public class UserPosDAO {
 			connection.commit();
 			
 		} catch (SQLException e) {
+			try {
+				connection.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 			e.printStackTrace();
 		}
 		
