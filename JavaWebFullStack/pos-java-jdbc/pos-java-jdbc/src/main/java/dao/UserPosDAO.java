@@ -20,13 +20,12 @@ public class UserPosDAO {
 	
 	public void salvar (UserPosJava userposjava ) {
 		
-		String sql = "INSERT INTO userposjava (id, nome, email) VALUES (?, ?, ?)";
+		String sql = "INSERT INTO userposjava (nome, email) VALUES ( ?, ?)";
 		
 		try {
 			PreparedStatement insert = connection.prepareStatement(sql);
-			insert.setInt(1, userposjava.getId());
-			insert.setString(2, userposjava.getNome());
-			insert.setString(3, userposjava.getEmail());
+			insert.setString(1, userposjava.getNome());
+			insert.setString(2, userposjava.getEmail());
 			insert.execute();
 			
 			connection.commit();
@@ -100,4 +99,28 @@ public class UserPosDAO {
 		return usuario;
 	}
 
+	public void atualizar(UserPosJava userposjava) {
+		
+		String sql = "UPDATE userposjava set nome = ?, email = ? where id = " + userposjava.getId();
+		
+		
+		try {
+			PreparedStatement update = connection.prepareStatement(sql);
+			update.setString(1, userposjava.getNome());
+			update.setString(2, userposjava.getEmail());
+			update.execute();
+			
+			connection.commit();
+			
+		} catch (SQLException e) {
+			try {
+				connection.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+		}
+		
+	}
+	
 }

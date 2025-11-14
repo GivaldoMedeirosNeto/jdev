@@ -15,12 +15,23 @@ public class TesteConexao {
 		SingleConnection.getConnection();
 		
 		UserPosDAO dao = new UserPosDAO();
-		/*UserPosJava usuarios = new UserPosJava();
-		usuarios.setId(3);
-		usuarios.setNome("Mayara");
-		usuarios.setEmail("mayara@mlfc.enf.br");
+		UserPosJava usuarios = new UserPosJava();
+		usuarios.setNome("Penelope");
+		usuarios.setEmail("nega@gsmn.dev.br");
 		
-		dao.salvar(usuarios);*/
+		dao.salvar(usuarios);
+		
+		usuarios = new UserPosJava();
+		usuarios.setNome("Givaldo");
+		usuarios.setEmail("givaldo@gsmn.dev.br");
+		
+		dao.salvar(usuarios);
+		
+		usuarios = new UserPosJava();
+		usuarios.setNome("Teste");
+		usuarios.setEmail("teste@java.dev.br");
+		
+		dao.salvar(usuarios);
 		
 		List<UserPosJava> list =  dao.listar();
 		
@@ -28,9 +39,20 @@ public class TesteConexao {
 			System.out.println(userPosJava);
 		}
 		
-		System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
+		System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
 		
 		UserPosJava userPosJava = dao.buscar(1);
+		System.out.println(userPosJava);
+		
+		System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
+		
+		UserPosJava teste = new UserPosJava();
+		teste.setNome("Mayara");
+		teste.setEmail("mayara@mlfc.enf.br");
+		teste.setId(3);
+		
+		dao.atualizar(teste);
+		userPosJava = dao.buscar(3);
 		System.out.println(userPosJava);
 		
 	}
