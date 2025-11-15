@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import conexao.SingleConnection;
+import model.TelPosJava;
 import model.UserPosJava;
 
 public class UserPosDAO {
@@ -18,7 +19,7 @@ public class UserPosDAO {
 		connection = SingleConnection.getConnection();
 	}
 	
-	public void salvar (UserPosJava userposjava ) {
+	public void salvar (UserPosJava userposjava, TelPosJava telPosJava) {
 		
 		String sql = "INSERT INTO userposjava (nome, email) VALUES ( ?, ?)";
 		
@@ -26,6 +27,32 @@ public class UserPosDAO {
 			PreparedStatement insert = connection.prepareStatement(sql);
 			insert.setString(1, userposjava.getNome());
 			insert.setString(2, userposjava.getEmail());
+			insert.execute();
+			
+			connection.commit();
+			telPosJava.setIdUser(buscarIdUser());
+			salvarTel(telPosJava);
+			
+		} catch (SQLException e) {
+			try {
+				connection.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void salvarTel (TelPosJava telPosJava) {
+		
+		String sql = "INSERT INTO telposjava (tipo, numero, iduser) VALUES ( ?, ?, ?)";
+		
+		try {
+			PreparedStatement insert = connection.prepareStatement(sql);
+			insert.setString(1, telPosJava.getTipo());
+			insert.setString(2, telPosJava.getTelefone());
+			insert.setInt(3, telPosJava.getIdUser());
 			insert.execute();
 			
 			connection.commit();
@@ -141,6 +168,33 @@ public class UserPosDAO {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public int buscarIdUser() {
+		
+		int idUser = 0;
+		
+		String sql = "SELECT MAX(id) AS ultimo_id FROM userposjava;";
+		try {
+			PreparedStatement select = connection.prepareStatement(sql);
+			ResultSet resultado = select.executeQuery();
+			
+			if(resultado.next()) {
+				idUser = resultado.getInt("ultimo_id");
+				System.out.println(idUser);
+			}
+			
+			
+		} catch (SQLException e) {
+			try {
+				connection.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+		}
+		
+		return idUser;
 	}
 	
 }

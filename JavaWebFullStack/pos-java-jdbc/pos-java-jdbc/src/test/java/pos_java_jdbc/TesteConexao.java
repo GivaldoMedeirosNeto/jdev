@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import conexao.SingleConnection;
 import dao.UserPosDAO;
+import model.TelPosJava;
 import model.UserPosJava;
 
 public class TesteConexao {
@@ -16,22 +17,29 @@ public class TesteConexao {
 		
 		UserPosDAO dao = new UserPosDAO();
 		UserPosJava usuarios = new UserPosJava();
+		TelPosJava telefones = new TelPosJava();
 		usuarios.setNome("Penelope");
 		usuarios.setEmail("nega@gsmn.dev.br");
+		telefones.setTipo("celular");
+		telefones.setTelefone("8499999-9999");
 		
-		dao.salvar(usuarios);
+		dao.salvar(usuarios, telefones);
 		
 		usuarios = new UserPosJava();
 		usuarios.setNome("Givaldo");
 		usuarios.setEmail("givaldo@gsmn.dev.br");
+		telefones.setTipo("celular");
+		telefones.setTelefone("8488888-8888");
 		
-		dao.salvar(usuarios);
+		dao.salvar(usuarios, telefones);
 		
 		usuarios = new UserPosJava();
 		usuarios.setNome("Teste");
 		usuarios.setEmail("teste@java.dev.br");
+		telefones.setTipo("celular");
+		telefones.setTelefone("8477777-7777");
 		
-		dao.salvar(usuarios);
+		dao.salvar(usuarios, telefones);
 		
 		List<UserPosJava> list =  dao.listar();
 		
@@ -57,7 +65,7 @@ public class TesteConexao {
 		
 		System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
 		
-		dao.deletar(3);
+		/*dao.deletar(3);*/
 		
 		List<UserPosJava> list1 =  dao.listar();
 		for (UserPosJava userPosJava1 : list1) {
