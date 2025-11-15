@@ -151,11 +151,16 @@ public class UserPosDAO {
 	}
 	
 	public void deletar(int id) {
-		
-		String sql = "DELETE FROM userposjava where id = " + id;
-		
+		String sql = "";
+		 
 		try {
+			sql = "DELETE FROM telposjava where iduser = " + id;
 			PreparedStatement delet = connection.prepareStatement(sql);
+			delet.execute();			
+			connection.commit();
+			
+			sql = "DELETE FROM userposjava where id = " + id; 
+			delet = connection.prepareStatement(sql);
 			delet.execute();			
 			connection.commit();
 			
@@ -181,7 +186,6 @@ public class UserPosDAO {
 			
 			if(resultado.next()) {
 				idUser = resultado.getInt("ultimo_id");
-				System.out.println(idUser);
 			}
 			
 			
