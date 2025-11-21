@@ -11,6 +11,12 @@
   <name>curso-jsp</name>
   <description>Curso jsp jdev treinmaneto</description>
   
+  <dependencies>
+	  
+	  
+	  
+  </dependencies>
+  
   <build>
 	  
     <plugins>

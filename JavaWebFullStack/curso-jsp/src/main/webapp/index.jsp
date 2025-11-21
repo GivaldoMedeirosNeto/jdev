@@ -17,7 +17,7 @@
 			out.print("sucesso garantido");
 		%>
 		
-		<form action="receber-nome.jsp">
+		<form action="ServletLogin" method="post">
 			
 			<input name="nome">
 			<input name="idade">
