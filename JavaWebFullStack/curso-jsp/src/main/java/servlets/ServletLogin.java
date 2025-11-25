@@ -1,10 +1,13 @@
 package servlets;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.ModelLogin;
+
 import java.io.IOException;
 
 @WebServlet("/ServletLogin") /* Mapeamento de URL */
@@ -24,8 +27,34 @@ public class ServletLogin extends HttpServlet {
 
 	/* Recebe os dados por um formulario */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println(request.getParameter("nome"));
-		System.out.println(request.getParameter("idade"));
+		
+		ModelLogin login = new ModelLogin(request.getParameter("user"), request.getParameter("password"));
+		
+		if(login.getLogin() != null && !login.getLogin().isEmpty()
+			&& login.getPassword() != null && !login.getPassword().isEmpty()) {
+			
+			if(login.getLogin().equalsIgnoreCase("admin") && login.getPassword().equalsIgnoreCase("admin")) {
+				
+				request.getSession().setAttribute("usuario", login);
+				RequestDispatcher redirecionar = request.getRequestDispatcher("principal/principal.jsp");
+				redirecionar.forward(request, response);
+				
+			} else {
+				
+				RequestDispatcher redirecionar = request.getRequestDispatcher("index.jsp");
+				request.setAttribute("msg", "Informe o usuário e senha corretamente!");
+				redirecionar.forward(request, response);
+				
+			}
+			
+		} else {
+			
+			RequestDispatcher redirecionar = request.getRequestDispatcher("index.jsp");
+			request.setAttribute("msg", "Informe o usuário e senha corretamente!");
+			redirecionar.forward(request, response);
+			
+		}
+
 	}
 
 }
