@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class SingleConnection {
 	
-	private static String url = "jdbc:mysql://localhost:3306/curso-jsp?noAccessToProcedureBodies=true";
+	private static String url = "jdbc:mysql://localhost:3306/cursojsp?noAccessToProcedureBodies=true";
 	private static String user = "root";
 	private static String pass = "Db4G1v4ld0@85";
 	private static Connection connection = null;

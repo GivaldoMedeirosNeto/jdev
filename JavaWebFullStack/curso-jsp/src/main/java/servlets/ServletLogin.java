@@ -10,10 +10,14 @@ import model.ModelLogin;
 
 import java.io.IOException;
 
+import dao.DAOLoginRepository;
+
 @WebServlet(urlPatterns = {"/principal/ServletLogin","/ServletLogin"}) /* Mapeamento de URL */
 public class ServletLogin extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
+	
+	private DAOLoginRepository daoLoginRepository = new DAOLoginRepository();
        
     
     public ServletLogin() {
@@ -34,21 +38,27 @@ public class ServletLogin extends HttpServlet {
 		if(login.getLogin() != null && !login.getLogin().isEmpty()
 			&& login.getPassword() != null && !login.getPassword().isEmpty()) {
 			
-			if(login.getLogin().equalsIgnoreCase("admin") && login.getPassword().equalsIgnoreCase("admin")) {
+			try {
 				
-				request.getSession().setAttribute("user", login.getLogin());
-				if(url == null || url.equals("null")) {
-					url = "principal/principal.jsp";
+				if(daoLoginRepository.autenticacao(login)) {
+					
+					request.getSession().setAttribute("user", login.getLogin());
+					if(url == null || url.equals("null")) {
+						url = "principal/principal.jsp";
+					}
+					RequestDispatcher redirecionar = request.getRequestDispatcher(url);
+					redirecionar.forward(request, response);
+					
+				} else {
+					
+					RequestDispatcher redirecionar = request.getRequestDispatcher("/index.jsp");
+					request.setAttribute("msg", "Informe o usuário e senha corretamente!");
+					redirecionar.forward(request, response);
+					
 				}
-				RequestDispatcher redirecionar = request.getRequestDispatcher(url);
-				redirecionar.forward(request, response);
 				
-			} else {
-				
-				RequestDispatcher redirecionar = request.getRequestDispatcher("/index.jsp");
-				request.setAttribute("msg", "Informe o usuário e senha corretamente!");
-				redirecionar.forward(request, response);
-				
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 			
 		} else {
