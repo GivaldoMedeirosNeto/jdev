@@ -17,10 +17,10 @@
 [📚 Enviando-Email ](../JavaWebFullStack/Enviando-Email/)<br>
 [📚 Front-End ](../JavaWebFullStack/Front-End/)<br>
 [📚 Java-JDBC ](../JavaWebFullStack/Java-JDBC/)<br>
-[📚 JSP ](../JavaWebFullStack/JSP/)<br>
+
 
 ## <h3> Projetos </h3>
 
 [📚 CalcMedAluno ](../JavaWebFullStack/CalcMedAluno/)<br>
 [📚 Proj-Escola ](../JavaWebFullStack/Proj-Escola/)<br>
-
+[📚 JSP ](../JavaWebFullStack/JSP/)<br>
