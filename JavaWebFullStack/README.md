@@ -96,15 +96,4 @@ JavaWebFullStack/
 
 ---
 
-# 📌 Futuras Implementações
-
-- APIs REST completas
-- Integração com autenticação JWT
-- Dockerização dos projetos
-- Deploy em nuvem
-- Integração Front-End e Back-End
-- Melhorias visuais nas aplicações
-
----
-
 # 👨‍💻 Desenvolvido por Givaldo.
