@@ -4,8 +4,6 @@ Repositório contendo exercícios, aulas e projetos desenvolvidos durante a form
 
 ## 👨‍🏫 Professor Alex Fernando Egidio
 
----
-
 # 🚀 Objetivo
 
 O objetivo deste repositório é armazenar conteúdos práticos e aplicações desenvolvidas durante os estudos de Java Web Full Stack, abordando desde fundamentos da linguagem até desenvolvimento Web com Java, JDBC, JSP e Spring Boot.
