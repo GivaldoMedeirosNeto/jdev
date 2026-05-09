@@ -88,6 +88,30 @@ public class DAOUsuario {
 		
 	}
 	
+	public Usuario consultarUsuarioId(String id) throws SQLException {
+		
+		Usuario usuario = new Usuario();
+		
+		sql = "SELECT * FROM usuarios WHERE idUsuario = ? AND login <> ?;";
+		
+		PreparedStatement statement = connection.prepareStatement(sql);
+	    statement.setInt(1, Integer.parseInt(id));
+	    statement.setString(2, "admin");
+	    
+	    ResultSet resultado = statement.executeQuery();
+	    
+	    while(resultado.next()) {
+	    	usuario.setIdUsuario(resultado.getInt("idUsuario"));
+	    	usuario.setNome(resultado.getString("nome"));
+	    	usuario.setEmail(resultado.getString("email"));
+	    	usuario.setLogin(resultado.getString("login"));
+	    	usuario.setObs(resultado.getString("obs"));	    	
+	    }
+		
+	    return usuario;
+		
+	}
+	
 	public List<Usuario> consultar(String nome) throws SQLException {
 		
 		List<Usuario> retorno = new ArrayList<Usuario>();		

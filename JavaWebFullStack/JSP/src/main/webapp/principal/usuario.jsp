@@ -204,7 +204,27 @@
 						url: urlAction,
 						data: "nome=" + nomeP + "&acao=pesquisarAjax",
 						success: function(response){
-							alert('Usuarios.');
+							
+							var json = JSON.parse(response);
+							
+							$('#tbUsuarios > tbody > tr').remove();
+							
+							for(var p=0; p < json.length; p++){
+								$('#tbUsuarios > tbody').append('<tr>' +
+								'<td>'+json[p].idUsuario+'</td>' +
+								'<td>'+json[p].login+'</td>' +
+								'<td>'+json[p].nome+'</td>' +
+								'<td>'+json[p].email+'</td>' +								
+								'<td><button onclick="editar('+json[p].idUsuario+')" class="btn waves-effect waves-light btn-primary btn-outline-primary" type="button">Editar</button></td>' +
+								'</tr>')
+							}
+							
+							if(json.length > 1){
+								document.getElementById('qtdUsuarios').textContent = json.length + ' Usuários Encontrados';
+							} else {
+								document.getElementById('qtdUsuarios').textContent = json.length + ' Usuário Encontrado';
+							}
+							
 						}
 						
 					}).fail(function(xhr, status, errorThrown){
@@ -212,9 +232,12 @@
 					});
 				}
 				
-				
-				
 			}
+			
+			function editar(idUsuario) {
+				var urlAction = document.getElementById("formUsuario").action;
+				window.location.href = urlAction + '?acao=editar&idUsuario=' + idUsuario;
+			}			
 		
 		</script>
 		

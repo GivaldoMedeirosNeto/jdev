@@ -32,11 +32,11 @@
 			<!-- Hover table card start -->
             <div class="card">
                 <div class="card-header">
-                    <h5>Usuário(s) Cadastrado(s)</h5> 
+                    <h5 id="qtdUsuarios"></h5> 
                 </div>
-                <div class="card-block table-border-style">
+                <div class="card-block table-border-style" style="height: 300px; overflow: scroll;">
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                        <table class="table table-hover" id="tbUsuarios">
                             <thead>
                                 <tr>
                                     <th>ID</th>

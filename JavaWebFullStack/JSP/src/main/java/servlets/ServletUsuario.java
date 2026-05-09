@@ -61,6 +61,21 @@ public class ServletUsuario extends HttpServlet {
 				request.getRequestDispatcher("erro.jsp").forward(request, response);
 			}
 			
+		} else if(acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("editar")) {
+			
+			String id = request.getParameter("idUsuario");
+			
+			try {
+				Usuario usuario = daoUsuario.consultarUsuarioId(id);
+				request.setAttribute("msg", Mensagens.edtUsuario);
+				request.setAttribute("modelUsuario", usuario);
+				request.getRequestDispatcher("principal/usuario.jsp").forward(request, response);
+			} catch (SQLException e) {
+				e.printStackTrace();
+				request.setAttribute("msg", e.getMessage());
+				request.getRequestDispatcher("erro.jsp").forward(request, response);
+			}
+			
 		} else {
 			request.getRequestDispatcher("principal/usuario.jsp").forward(request, response);
 		}
