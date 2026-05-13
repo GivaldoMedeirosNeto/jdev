@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -44,7 +45,7 @@
                                             		<div class="card">
                                             		
 	                                                    <div class="card-header">
-	                                                        <h5>Cadastro de Usuários</h5><!--<span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>-->
+	                                                        <h5>Cadastro de Usuários</h5>
 	                                                    </div>
 	                                                    
 	                                                    <div class="card-block">
@@ -124,6 +125,41 @@
 	                                                    </div>
 	                                                    
                                                 	</div>
+                                                	
+                                                	<!-- Hover table card start -->
+										            <div class="card">
+										                <div class="card-header">
+										                    <h5>${qdtUsuarios}</h5> 
+										                </div>
+										                <div class="card-block table-border-style" style="height: 600px; overflow: scroll;">
+										                    <div class="table-responsive">
+										                        <table class="table table-hover" id="tbLista">
+										                            <thead>
+										                                <tr>
+										                                    <th>ID</th>
+										                                    <th>Login</th>
+										                                    <th>Name</th>
+										                                    <th>email</th>
+										                                </tr>
+										                            </thead>
+										                            <tbody>										                            
+										                            	<c:forEach items="${listaUsuarios}" var="usuario">										                            	
+										                            		<tr>
+										                            			<td><c:out value='${usuario.idUsuario}'></c:out></td>
+										                            			<td><c:out value="${usuario.login}"></c:out></td>
+										                            			<td><c:out value="${usuario.nome}"></c:out></td>
+										                            			<td><c:out value="${usuario.email}"></c:out></td>
+										                            			<td><c:out value="${usuario.obs}"></c:out></td>
+										                            			<td>
+										                            				<a href="<%= request.getContextPath() %>/ServletUsuario?acao=editar&idUsuario=${usuario.idUsuario}">Editar</a>
+										                            			</td>
+										                            		</tr>										                            	
+										                            	</c:forEach>										                            
+										                            </tbody>
+										                        </table>
+										                    </div>
+										                </div>
+										            </div>
 			                                        
                                             	</div>                                            	
                                             	                                           

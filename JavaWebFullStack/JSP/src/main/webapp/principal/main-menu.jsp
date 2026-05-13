@@ -37,7 +37,7 @@
 		<ul class="pcoded-item pcoded-left-item">
 		
 			<li>
-				<a href="<%= request.getContextPath() %>/principal/usuario.jsp"
+				<a href="<%= request.getContextPath() %>/ServletUsuario?acao=listar"
 					class="waves-effect waves-dark">
 					<span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
 					<span class="pcoded-mtext" data-i18n="nav.form-components.main">Usuários</span>

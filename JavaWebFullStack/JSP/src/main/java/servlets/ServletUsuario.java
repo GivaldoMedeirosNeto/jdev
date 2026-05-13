@@ -16,7 +16,7 @@ import constante.Mensagens;
 import dao.DAOUsuario;
 
 
-@WebServlet(urlPatterns = {"/ServletUsuario", "/principal/ServletUsuario"})
+@WebServlet(urlPatterns = {"/ServletUsuario", "/principal/ServletUsuario", "/usuario.jsp"})
 public class ServletUsuario extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
@@ -76,6 +76,19 @@ public class ServletUsuario extends HttpServlet {
 				request.getRequestDispatcher("erro.jsp").forward(request, response);
 			}
 			
+		} else if(acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("listar")) {
+			
+			try {
+				List<Usuario> lista = daoUsuario.consultar();
+				request.setAttribute("listaUsuarios", lista);
+				request.setAttribute("qdtUsuarios", lista.size() > 1 ? lista.size()+" Usuários Cadastrados" : " Usuário Cadastrado" );
+				request.getRequestDispatcher("principal/usuario.jsp").forward(request, response);
+			} catch (SQLException e) {
+				e.printStackTrace();
+				request.setAttribute("msg", e.getMessage());
+				request.getRequestDispatcher("erro.jsp").forward(request, response);
+			}
+			
 		} else {
 			request.getRequestDispatcher("principal/usuario.jsp").forward(request, response);
 		}
@@ -83,7 +96,7 @@ public class ServletUsuario extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				
+		
 		Usuario usuario = new Usuario(
 			Integer.parseInt(request.getParameter("idUsuario").isEmpty() ? "0" : request.getParameter("idUsuario")),
 			request.getParameter("nome"),

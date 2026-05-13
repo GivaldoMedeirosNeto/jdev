@@ -139,6 +139,32 @@ public class DAOUsuario {
 		return retorno;
 	}
 	
+	public List<Usuario> consultar() throws SQLException {
+		
+		List<Usuario> retorno = new ArrayList<Usuario>();		
+		
+		String sql = "SELECT * FROM usuarios WHERE login <> ?";
+		
+		PreparedStatement statement = connection.prepareStatement(sql);
+		statement.setString(1, "admin");
+		
+		ResultSet resultado = statement.executeQuery();
+		
+		while (resultado.next()) {
+			Usuario usuario = new Usuario();
+			usuario.setIdUsuario(resultado.getInt("idUsuario"));
+			usuario.setNome(resultado.getString("nome"));
+			usuario.setEmail(resultado.getString("email"));
+			usuario.setLogin(resultado.getString("login"));
+			usuario.setPass(resultado.getString("pass"));
+			usuario.setObs(resultado.getString("obs"));
+			
+			retorno.add(usuario);
+		}
+		
+		return retorno;
+	}
+	
 	public boolean validarLogin (String login) throws SQLException{
 		
 		String sql = "SELECT count(1) > 0 AS retorno FROM usuarios WHERE login = ?";
